@@ -1,0 +1,158 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:root {
+  --c-bg: hsl(257, 40%, 49%);
+  --c-button-hover: hsl(300, 69%, 71%);
+  --c-link-hover: hsl(325, 100%, 63%);
+
+  --c-text-hsl: 0, 100%, 100%;
+  --c-text: hsl(var(--c-text-hsl), .7);
+
+  --ff-heading: "Poppins", sans-serif;
+  --ff-body: "Open Sans", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 600;
+}
+
+body {
+  --fs-base: 1rem;
+  line-height: 1.5;
+  font-size: var(--fs-base);
+  font-family: var(--ff-body);
+  font-weight: var(--fw-regular);
+  min-height: 100vh;
+  background-color: var(--c-bg);
+  background-image: url(./images/bg-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100vw;
+  color: hsl(var(--c-text-hsl));
+  display: grid;
+  place-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.logo {
+  align-self: flex-start;
+  width: min(34vw, 13.5rem);
+}
+
+.container {
+  display: grid;
+  margin: 4rem 0;
+  max-width: 1280px;
+  justify-items: center;
+}
+
+.intro-content {
+  text-align: center;
+  margin-top: 3rem;
+  max-width: 32.5rem;
+}
+
+.intro-title {
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-bold);
+  font-size: 1.5rem;
+}
+
+.intro-text {
+  color: var(--c-text);
+  margin: 1em 0;
+}
+
+.main {
+  flex-direction: column;
+  padding: 2rem min(10vw, 3rem);
+}
+
+.button {
+  line-height: 1;
+  font: inherit;
+  border: 0;
+  border-radius: 100vw;
+  padding: 0.75em 4.5em;
+  color: var(--c-bg);
+  align-self: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 6px, rgba(0, 0, 0, 0.2) 0px 3px 6px;
+  margin-top: 0.5rem;
+}
+
+.button:is(:hover, :focus) {
+  cursor: pointer;
+  background-color: var(--c-button-hover);
+  color: var(--c-text);
+}
+
+.link-icons {
+  align-self: center;
+  gap: 1rem;
+}
+
+.icon {
+  font-size: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--c-text);
+  aspect-ratio: 1 / 1;
+  border-radius: 100vw;
+  width: 2.5rem;
+}
+
+.icon:is(:hover, :focus) {
+  border: 1px solid hsl(325, 100%, 63%);
+  color: hsl(325, 100%, 63%);
+}
+
+@media (min-width: 1200px) {
+  body {
+    --fs-base: 1.125rem;
+    background-image: url(./images/bg-desktop.svg);
+    background-size: cover;
+    background-position: top left;
+  }
+
+  .main {
+    padding: 3.5rem;
+  }
+
+  .container {
+    display: flex;
+    gap: 3rem;
+    margin: 5rem 0 1rem;
+  }
+
+  .intro-content {
+    text-align: left;
+  }
+
+  .intro-title {
+    font-size: 2.5rem;
+  }
+
+  .button {
+    padding: 0.75em 3.75em;
+  }
+
+  .link-icons {
+    align-self: flex-end;
+  }
+}
